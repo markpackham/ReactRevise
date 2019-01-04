@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# SASS #
+##########
+.sass-cache
+
+# IDE #
+##########
+.idea
+.vscode
