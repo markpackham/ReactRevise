@@ -97,3 +97,62 @@ class Talker extends React.Component {
   }
 }
 ReactDOM.render(<Talker />, document.getElementById("app"));
+
+//use names like onClick & handleClick for Event Handlers
+import React from "react";
+export class Button extends React.Component {
+  render() {
+    return <button onClick={this.props.onClick}>Click me!</button>;
+  }
+}
+import React from "react";
+import ReactDOM from "react-dom";
+import { Button } from "./Button";
+class Talker extends React.Component {
+  handleClick() {
+    let speech = "";
+    for (let i = 0; i < 10000; i++) {
+      speech += "blah ";
+    }
+    alert(speech);
+  }
+
+  render() {
+    return <Button onClick={this.handleClick} />;
+  }
+}
+ReactDOM.render(<Talker />, document.getElementById("app"));
+
+//this.props.children to access children
+import React from "react";
+export class List extends React.Component {
+  render() {
+    let titleText = `Favorite ${this.props.type}`;
+    if (this.props.children instanceof Array) {
+      titleText += "s";
+    }
+    return (
+      <div>
+        <h1>{titleText}</h1>
+        <ul>{this.props.children}</ul>
+      </div>
+    );
+  }
+}
+
+//defaultProps (do this is you haven't declared anything in your instance)
+import React from "react";
+import ReactDOM from "react-dom";
+
+class Button extends React.Component {
+  render() {
+    return <button>{this.props.text}</button>;
+  }
+}
+// defaultProps goes here:
+Button.defaultProps = { text: "I am a button" };
+ReactDOM.render(
+  //even with a default prop text is overidden and becomes ""
+  <Button text="" />,
+  document.getElementById("app")
+);
