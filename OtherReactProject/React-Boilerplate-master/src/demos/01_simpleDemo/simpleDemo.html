@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Template</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+<div id="example"></div>
+<script type="text/babel">
+
+    var Bacon = React.createClass({
+        render: function () {
+            return (
+                //React can only handle 1 parent so we need to put the tags in a div to hold them
+                    <div>
+                        <h3>This is a simple component</h3>
+                        <p>I am some sample text</p>
+                    </div>
+            );
+        }
+    });
+
+    //ReactDOM.render(<h1>Bucky</h1>, document.getElementById('example'));
+    //We need a div to act as the parent for multiple bacons
+    ReactDOM.render(<div><Bacon/><Bacon/><Bacon/><Bacon/></div>, document.getElementById('example'));
+
+</script>
+
+</body>
+</html>

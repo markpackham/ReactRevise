@@ -1,0 +1,22 @@
+node_modules
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# IDE #
+##########
+.idea
+.vscode
